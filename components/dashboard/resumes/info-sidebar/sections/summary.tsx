@@ -1,4 +1,5 @@
 import { Titulo } from "@/components/titulo";
+import { Editor } from "@/components/ui/editor";
 import { Controller, useFormContext } from "react-hook-form";
 
 export function Summary() {
@@ -16,9 +17,13 @@ export function Summary() {
                 control={control}
                 name="summary"
                 render={({ field }) => (
-                    <textarea {...field} />
+                   <Editor
+                    content={field.value}
+                    onChange={field.onChange}
+                   />
                 )}
             />
+         
         </div>
     )
 }
